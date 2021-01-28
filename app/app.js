@@ -12,7 +12,8 @@
 //     console.log("http로 가동된 서버입니다.");
 // });
 
-// MVC 패턴
+// MVC 패턴 
+// app.js main file
 "use strict";
 
 // 모듈
@@ -26,6 +27,8 @@ const home = require("./src/routes/home");
 app.set("views", "./src/views");
 app.set("view engine", "ejs"); // HTML과 비슷
 
+app.use(express.static(`${__dirname}/src/public`)) // 정적 경로 추가 
+// dirname -> 현재 위치 
 
 app.use("/", home); // use -> 미들 웨어를 등록해주는 메서드.
 
