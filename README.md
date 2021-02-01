@@ -34,3 +34,6 @@ nodemon (sudo npm install nodemon -g)으로 서버 구동
 로그인 인증기능 (받은 데이터 == 객체)
 UserStorage모델 구현
 User모델 구현
+
+## 2021 02 02
+로그인 화면 꾸미기 (html, css)

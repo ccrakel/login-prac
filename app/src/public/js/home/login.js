@@ -4,7 +4,7 @@
 
 const id = document.querySelector("#id"), // # -> id 가져옴
     pw = document.querySelector("#pw"),
-    loginBtn = document.querySelector("button");
+    loginBtn = document.querySelector("#login");
 
 loginBtn.addEventListener("click", login);
 
