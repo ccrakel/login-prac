@@ -23,8 +23,16 @@ function login() {
         body: JSON.stringify(req), // JSON형태로 문자열로 감싸짐 body로 데이터 전달 
     })
         .then((res) => res.json())
-        .then(console.log)
-        //.then((res) => console.log(res))
+        .then((res) => {
+            if (res.success) {
+                location.href = "/";
+            } else {
+                alert(res.msg);
+            }
+        })
+        .catch((err) => {
+            console.error("로그인 중 에러 발생");
+        });
     // then메서드로 다시 응답데이터 가져오기 가능
 }
 
