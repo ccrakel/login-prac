@@ -12,5 +12,4 @@ router.get("/register", ctrl.output.register);
 router.post("/login", ctrl.process.login);
 router.post("/register", ctrl.process.register);
 
-
 module.exports = router; // 외부로 사용할 수 있도록 내보내기

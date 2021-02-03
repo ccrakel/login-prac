@@ -23,7 +23,6 @@ const process = {
 	login: async (req, res) => {
 		const user = new User(req.body);
 		const response = await user.login();
-		console.log(response)
 		return res.json(response);
 		
 		// src/models/User.js 에 구현
@@ -44,11 +43,11 @@ const process = {
 		// response.msg = "로그인에 실패하였습니다."
 		// return res.json(response);
 	},
-	register: (req, res) => {
+	register: async (req, res) => {
 		const user = new User(req.body);
-		const response = user.register();
+		const response = await user.register();
 		return res.json(response);
-	}
+	},
 };
 // object key 하나만 입력 -> 키와 같은 value로 넣어줌 (ES6)
 module.exports = {
