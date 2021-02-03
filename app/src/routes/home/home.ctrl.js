@@ -13,6 +13,10 @@ const output = {
 	login: (req, res) => {
 		res.render("home/login");
 	},
+
+	register: (req, res) => {
+		res.render("home/register");
+	}
 };
 
 const process = {
@@ -21,6 +25,7 @@ const process = {
 		const response = user.login();
 		return res.json(response);
 		
+		// src/models/User.js 에 구현
 		// const id = req.body.id,
 		// 	pw = req.body.pw;
 		// const users = UserStorage.getUsers("id", "pw");
@@ -38,6 +43,11 @@ const process = {
 		// response.msg = "로그인에 실패하였습니다."
 		// return res.json(response);
 	},
+	register: (req, res) => {
+		const user = new User(req.body);
+		const response = user.register();
+		return res.json(response);
+	}
 };
 // object key 하나만 입력 -> 키와 같은 value로 넣어줌 (ES6)
 module.exports = {
