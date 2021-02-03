@@ -6,9 +6,12 @@ class User {
     constructor(body) {
         this.body = body;
     }
-    login() {
+    async login() {
         const client = this.body;
-        const { id, pw } = UserStorage.getUserInfo(client.id);
+        const {id,pw} = await UserStorage.getUserInfo(client.id);
+        // await 으로 promise를 반환하는 데이터를 다 받을때까지 기다림
+        // await은 async함수 안에서만 사용 가능
+        // async await 함수는 자체적으로 promise를 반환한다
         
         if (id) {
             if (id === client.id && pw === client.pw) {
