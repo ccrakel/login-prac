@@ -7,15 +7,15 @@ const User = require("../../models/User")
 const output = {
 	home: (req, res) => {
 		// 렌더링 기능
-		res.render("home/index");
+		res.render("./home/index");
 	},
 
 	login: (req, res) => {
-		res.render("home/login");
+		res.render("./home/login");
 	},
 
 	register: (req, res) => {
-		res.render("home/register");
+		res.render("./home/register");
 	}
 };
 
@@ -24,7 +24,7 @@ const process = {
 		const user = new User(req.body);
 		const response = await user.login();
 		return res.json(response);
-		
+
 		// src/models/User.js 에 구현
 		// const id = req.body.id,
 		// 	pw = req.body.pw;

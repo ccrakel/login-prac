@@ -44,3 +44,24 @@ User모델 구현
 파일시스템을 DB로 이용해서 로그인 구현
 async, await은 try catch로 오류처리
 fs모듈을 통한 회원가입 기능 구현
+서버 API 테스트 도구 -> Postman & curl
+
+## 2021 02 04
+네이버 클라우드 서버 대여
+
+ssh -l root -p 22 ip
+###Node.js 설치
+curl -sL https://deb.nodesource.com/setup_원하는.버전| sudo -E bash -
+sudo apt-get install -y nodejs
+
+###MySQL 설치
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mysql-server
+sudo mysql_secure_installation
+
+password로 접근
+mysql -u root -p
+
+우분투에 node, mysql 구축
+https://ppost.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-1804%EC%97%90-%EC%84%9C%EB%B2%84%ED%99%98%EA%B2%BD-nodemysql%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0
