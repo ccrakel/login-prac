@@ -12,18 +12,35 @@ function login() {
     const req = {
         id: id.value,
         pw: pw.value,
-    };
-    console.log(req);
+    }
+    // const res = await fetch('http://115.85.183.157/login', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json;charset=utf-8'
+    //     },
+    //     body: JSON.stringify(req),
+    // });
+    // alert(res);
+
+    // const commits = await res.json();
+    // alert(commits)
+
+    // if(commits.success) {
+    //     location.href = '/';
+    // } else {
+    //     alert(commits.msg);
+    // }
 
     fetch("/login", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(req), // JSON형태로 문자열로 감싸짐 body로 데이터 전달 
     })
         .then((res) => res.json())
         .then((res) => {
+            console.log(res)
             if (res.success) {
                 location.href = "/";
             } else {
@@ -33,7 +50,7 @@ function login() {
         .catch((err) => {
             console.error("로그인 중 에러 발생");
         });
-    // then메서드로 다시 응답데이터 가져오기 가능
+    //then메서드로 다시 응답데이터 가져오기 가능
 }
 
 // res.json()의 반환 값은 Promise
